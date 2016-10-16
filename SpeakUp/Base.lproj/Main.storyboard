@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeakUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aperte o Botão do Microfone e Fale um comando" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1to-A6-yv9">
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfh-OH-tF4">
+                                <state key="normal" image="Microphone48dp"/>
+                                <connections>
+                                    <action selector="speakButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="CQb-yc-doO"/>
+                                    <action selector="speakButtonReleased:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ucd-SJ-ysZ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tys-vW-7ZB">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hk8-f3-MdV">
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goZ-Yg-P7O">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escutando ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBp-VN-zFD">
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mBp-VN-zFD" firstAttribute="centerX" secondItem="goZ-Yg-P7O" secondAttribute="centerX" id="9Rc-XQ-xCO"/>
+                                    <constraint firstItem="mBp-VN-zFD" firstAttribute="centerY" secondItem="goZ-Yg-P7O" secondAttribute="centerY" id="BpW-S9-1n5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bfh-OH-tF4" firstAttribute="top" secondItem="hk8-f3-MdV" secondAttribute="bottom" constant="45" id="1zC-N7-xHH"/>
+                            <constraint firstItem="hk8-f3-MdV" firstAttribute="top" secondItem="Tys-vW-7ZB" secondAttribute="bottom" constant="45" id="5p3-eV-5sK"/>
+                            <constraint firstItem="Tys-vW-7ZB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9Re-Jz-dNo"/>
+                            <constraint firstItem="1to-A6-yv9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="J7F-SW-fQc"/>
+                            <constraint firstItem="bfh-OH-tF4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M0W-oQ-Nxe"/>
+                            <constraint firstItem="1to-A6-yv9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="N0Q-iF-2bf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="goZ-Yg-P7O" secondAttribute="bottom" id="Pe5-6h-8fh"/>
+                            <constraint firstItem="goZ-Yg-P7O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RNZ-IX-D7N"/>
+                            <constraint firstItem="goZ-Yg-P7O" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Yad-Yq-wMn"/>
+                            <constraint firstItem="1to-A6-yv9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="cfW-8q-aWc"/>
+                            <constraint firstItem="hk8-f3-MdV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d0F-na-Xs9"/>
+                            <constraint firstItem="Tys-vW-7ZB" firstAttribute="top" secondItem="1to-A6-yv9" secondAttribute="bottom" constant="40" id="jxg-TB-FcD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bfh-OH-tF4" secondAttribute="bottom" constant="20" id="mLN-Bz-1xj"/>
+                            <constraint firstAttribute="trailing" secondItem="goZ-Yg-P7O" secondAttribute="trailing" id="oiM-Wh-mi9"/>
+                            <constraint firstItem="Tys-vW-7ZB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="veM-iP-HrK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hk8-f3-MdV" id="JdM-xn-3Tz"/>
+                        <outlet property="listeningOverlay" destination="goZ-Yg-P7O" id="cdY-W1-6d3"/>
+                        <outlet property="micButton" destination="bfh-OH-tF4" id="Q58-lS-0w3"/>
+                        <outlet property="statusMessage" destination="Tys-vW-7ZB" id="W0n-E5-NUn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Microphone48dp" width="48" height="48"/>
+    </resources>
+</document>
